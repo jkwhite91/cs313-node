@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <titleProve 9></title>
+        <% include ../partials/header.ejs %>
+    </head>
+    <body>
+        <% include ../partials/nav.ejs %>
+
+        <div class="container">
+            <h1>Postage Calculator</h1>
+
+            <form action="/calculateRate" method="GET">
+                <label for="mailType">Mail Type</label>
+                <select name="mailType">
+                    <option type="text" value="LS">Letters (Stamped)</option>
+                    <option type="text" value="LM">Letters (Metered)</option>
+                    <option type="text" value="PC">PostCard</option>
+                    <option type="text" value="LE">Large Envelopes(Flats)</option>
+                    <option type="text" value="FCPS">First-Class Package Service</option>
+                </select>
+                
+                <br/>
+                <label for="weight">Weight*</label>
+                <input type="text" name="weight"><br/>
+                
+                <input type="submit" name="submit">
+            </form>
+
+            <br/>
+            <p>*The weight will round up. If postcard insert number of postcards.</p>
+
+        </div>
+    </body>
+</html>
